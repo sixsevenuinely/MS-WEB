@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta-name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate | Bedford MS Therapy Centre</title>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-color: #f5f7fa;
+      color: #1e2a5a;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background-color: #1e2a5a;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 40px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+
+    .logo span {
+      color: #e91e63;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav-links li a {
+      color: white;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .nav-links li a:hover {
+      color: #e91e63;
+    }
+
+    .donate-btn {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .donate-btn:hover {
+      background-color: #c2185b;
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      font-size: 2rem;
+      cursor: pointer;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background-color: #1e2a5a;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        display: none;
+        padding: 20px 0;
+      }
+
+      .nav-links li {
+        margin: 15px 0;
+      }
+
+      #menu-toggle:checked ~ .nav-links {
+        display: flex;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .donate-btn {
+        display: none;
+      }
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background-color: #1e2a5a;
+      color: white;
+      text-align: center;
+      padding: 70px 20px;
+    }
+
+    .header h1 {
+      font-size: 2.4em;
+      margin-bottom: 10px;
+    }
+
+    /* ===== DONATION OPTIONS ===== */
+    .donate-container {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 20px;
+    }
+
+    .donate-options {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-bottom: 40px;
+    }
+
+    .option {
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      text-align: center;
+      border: 2px solid #e91e63;
+    }
+
+    .option h3 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    .option p {
+      margin-bottom: 15px;
+    }
+
+    .option button {
+      background-color: #1e2a5a;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .option button:hover {
+      background-color: #e91e63;
+    }
+
+    /* ===== DONATION FORM ===== */
+    .donate-form {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .donate-form h2 {
+      color: #e91e63;
+      margin-bottom: 15px;
+    }
+
+    .donate-form input,
+    .donate-form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1em;
+    }
+
+    .donate-form button {
+      background-color: #1e2a5a;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .donate-form button:hover {
+      background-color: #e91e63;
+    }
+
+    /* ===== BANK DETAILS ===== */
+    .bank-box {
+      background-color: #fff3f8;
+      border-left: 5px solid #e91e63;
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 40px;
+    }
+
+    .bank-box h3 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background-color: #1e2a5a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #e91e63;
+      margin: 0 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">Bedford <span>MS Therapy Centre</span></div>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="hamburger">&#9776;</label>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="events.html">Events</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <a href="donate.html" class="donate-btn">Donate</a>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="header">
+    <h1>Support Our Work</h1>
+    <p>Your donation helps us provide essential therapies and support.</p>
+  </section>
+
+  <!-- DONATION CONTENT -->
+  <div class="donate-container">
+
+    <!-- OPTIONS -->
+    <div class="donate-options">
+      <div class="option">
+        <h3>£10</h3>
+        <p>Helps fund therapy equipment and supplies.</p>
+        <button>Donate £10</button>
+      </div>
+
+      <div class="option">
+        <h3>£25</h3>
+        <p>Supports a therapy session for someone in need.</p>
+        <button>Donate £25</button>
+      </div>
+
+      <div class="option">
+        <h3>£50</h3>
+        <p>Contributes to running our centre for a day.</p>
+        <button>Donate £50</button>
+      </div>
+
+      <div class="option">
+        <h3>Custom Amount</h3>
+        <p>Give any amount you choose.</p>
+        <button>Enter Amount</button>
+      </div>
+    </div>
+
+    <!-- FORM -->
+    <div class="donate-form">
+      <h2>Make a Donation</h2>
+      <form>
+        <input type="number" placeholder="Donation Amount (£)" required>
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email Address" required>
+        <select required>
+          <option value="">Donation Type</option>
+          <option>One‑off Donation</option>
+          <option>Monthly Donation</option>
+        </select>
+        <button type="submit">Donate Now</button>
+      </form>
+    </div>
+
+    <!-- BANK DETAILS -->
+    <div class="bank-box">
+      <h3>Donate by Bank Transfer</h3>
+      <p><strong>Account Name:</strong> Bedford MS Therapy Centre</p>
+      <p><strong>Sort Code:</strong> 20‑45‑33</p>
+      <p><strong>Account Number:</strong> 30987654</p>
+      <p><strong>Reference:</strong> Your Name</p>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Bedford MS Therapy Centre | Registered Charity No. 802510</p>
+    <p>Follow us:
+      <a href="#">Facebook</a> |
+      <a href="#">Twitter</a> |
+      <a href="#">Instagram</a>
+    </p>
+  </footer>
+
+</body>
+</html>
