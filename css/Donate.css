@@ -134,7 +134,7 @@ body {
     }
 
     .option {
-      background-color: white;
+      background-color: #1e2a5a;
       padding: 25px;
       border-radius: 10px;
       text-align: center;
@@ -142,16 +142,16 @@ body {
     }
 
     .option h3 {
-      color: #e91e63;
-      margin-bottom: 10px;
+      color: white;
     }
 
     .option p {
       margin-bottom: 15px;
+      color: white;
     }
 
     .option button {
-      background-color: #1e2a5a;
+      background-color: #e91e63;
       color: white;
       padding: 10px 20px;
       border: none;
@@ -204,11 +204,15 @@ body {
 
     /* ===== BANK DETAILS ===== */
     .bank-box {
-      background-color: #fff3f8;
+      background-color: #1e2a5a;
       border-left: 5px solid #e91e63;
       padding: 20px;
       border-radius: 10px;
       margin-bottom: 40px;
+      border-right: 5px solid #e91e63;
+      border-top: 2.5px solid #e91e63;
+      border-bottom: 2.5px solid #e91e63;
+      color: white;
     }
 
     .bank-box h3 {
