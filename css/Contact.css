@@ -12,6 +12,23 @@
       color: inherit;
     }
 
+.color-link-box {
+  display: inline-block;
+  background-color: #1e2a5a; 
+  color: #ffffff; 
+  padding: 15px 30px; 
+  text-decoration: none; 
+  font-family: sans-serif; 
+  font-weight: bold; 
+  border-radius: 8px; 
+  transition: background 0.3s ease; 
+}
+
+/* Changes the color when you hover over the box */
+.color-link-box:hover {
+  background-color: #e91e63; 
+}
+
     /* ===== NAVBAR ===== */
     .navbar {
       background-color: #1e2a5a;
